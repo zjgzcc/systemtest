@@ -50,12 +50,12 @@ flag_high = True
 flag_low = True
 #循环执行
 while 1:
-    if flag_high:
+    while flag_high:
         if get_pressuregage_value()>=130:
             roll_back_10ml()
             flag_high=False
             flag_low=True
-    if flag_low:
+    while flag_low:
         if get_pressuregage_value()<=120:
             start_infusion()
             flag_low=False
